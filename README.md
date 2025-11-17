@@ -2,16 +2,11 @@
 
 ![IDE](https://img.shields.io/badge/IDE-IntelliJ%20IDEA-brightgreen.svg) ![JDK](https://img.shields.io/badge/Java-11-blue.svg) ![Database](https://img.shields.io/badge/Database-MySQL5.7-lightgrey.svg)
 
-- 毕业设计
-- SSM框架
-- Layui框架
+
 
 <img width="48" height="48" src="https://img.icons8.com/emoji/48/china-emoji.png" alt="china-emoji"/>
  <img width="40" height="40" src="https://img.icons8.com/color/30/intellij-idea.png" alt="intellij-idea"/>
 
-视问题==》有偿咨询、有偿提供文档资料
-
-![qq](https://img.shields.io/badge/QQ-1786234724-blue.svg)
 
 #### 1、项目介绍
 
