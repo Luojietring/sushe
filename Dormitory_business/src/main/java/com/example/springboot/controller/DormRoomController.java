@@ -21,6 +21,10 @@ public class DormRoomController {
      */
     @PostMapping("/add")
     public Result<?> add(@RequestBody DormRoom dormRoom) {
+        // 验证房间号是否在有效范围内(0-1000)
+        if (dormRoom.getDormRoomId() == null || dormRoom.getDormRoomId() < 0 || dormRoom.getDormRoomId() > 1000) {
+            return Result.error("-1", "房间号必须在0-1000范围内");
+        }
         int i = dormRoomService.addNewRoom(dormRoom);
         if (i == 1) {
             return Result.success();
@@ -34,6 +38,10 @@ public class DormRoomController {
      */
     @PutMapping("/update")
     public Result<?> update(@RequestBody DormRoom dormRoom) {
+        // 验证房间号是否在有效范围内(0-1000)
+        if (dormRoom.getDormRoomId() == null || dormRoom.getDormRoomId() < 0 || dormRoom.getDormRoomId() > 1000) {
+            return Result.error("-1", "房间号必须在0-1000范围内");
+        }
         int i = dormRoomService.updateNewRoom(dormRoom);
         if (i == 1) {
             return Result.success();
@@ -149,7 +157,7 @@ public class DormRoomController {
         if (dormRoom != null) {
             return Result.success(dormRoom);
         } else {
-            return Result.error("-1", "不存在该生");
+            return Result.error("-1", "该生尚未分配宿舍");
         }
     }
 
@@ -170,7 +178,7 @@ public class DormRoomController {
      * 检查床位是否已经有人
      */
     @GetMapping("/checkBedState/{dormRoomId}/{bedNum}")
-    public Result<?> getMyRoom(@PathVariable Integer dormRoomId, @PathVariable int bedNum) {
+    public Result<?> checkBedState(@PathVariable Integer dormRoomId, @PathVariable int bedNum) {
         DormRoom dormRoom = dormRoomService.checkBedState(dormRoomId, bedNum);
         if (dormRoom != null) {
             return Result.success(dormRoom);

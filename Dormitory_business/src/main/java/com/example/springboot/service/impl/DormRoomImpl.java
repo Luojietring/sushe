@@ -179,6 +179,7 @@ public class DormRoomImpl extends ServiceImpl<DormRoomMapper, DormRoom> implemen
         qw.isNotNull(currentBedName);
         DormRoom dormRoom1 = dormRoomMapper.selectOne(qw);
         if (dormRoom1 == null) {
+            // 该生尚未分配宿舍
             return -2;
         }
         int currentCapacity1 = calNum(dormRoom1);
